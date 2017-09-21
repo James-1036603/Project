@@ -66,8 +66,7 @@ void Player::update(const float& elapsedTime)
 
 
     Player::updateBullets(elapsedTime);//Update the bullets
-   _playerBullets = _playerBulletManager.deleteInactiveBullets(&_playerBullets);
-
+    _playerBullets =  _playerBulletManager.deleteInactiveBullets(&_playerBullets);//Delete inactive Bullets
 
 }
 
@@ -90,8 +89,7 @@ void Player::moveClockwise(const float& elapsedTime)
 
     _curPosition.y = _circleRadius * std::sin(angle)+540;
     _curPosition.x = _circleRadius * std::cos(angle)+960;
-    std::cout<<"X: "<<_curPosition.x<<"\n"<<"Y: "<<_curPosition.y<<"\n";
-        _curAngle = angle;
+    _curAngle = angle;
 }
 
 void Player::moveCounterClockwise(const float& elapsedTime)
@@ -100,8 +98,7 @@ void Player::moveCounterClockwise(const float& elapsedTime)
 
     _curPosition.y = _circleRadius * std::sin(angle)+540;
     _curPosition.x = _circleRadius * std::cos(angle)+960;
-    std::cout<<"X: "<<_curPosition.x<<"\n"<<"Y: "<<_curPosition.y<<"\n";
-        _curAngle = angle;
+    _curAngle = angle;
 }
 
 

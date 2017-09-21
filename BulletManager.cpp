@@ -14,10 +14,7 @@ std::vector<Bullet> BulletManager::deleteInactiveBullets(std::vector<Bullet>* bu
 {
     std::vector<Bullet> tempBulletVec;//Temp vector to store the ACTIVE bullets
     for(auto curBullet : *bulletVector)  if(curBullet.bulletIsAlive()) tempBulletVec.push_back(curBullet);
-
     return tempBulletVec;
-
-
 }
 
 //void BulletManager::deleteBullet(std::vector<Bullet>* bulletVector, const iterator& elem)

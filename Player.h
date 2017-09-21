@@ -3,7 +3,7 @@
 
 #define PI 3.14
 #include <vector>
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "Bullet.h"
 #include "BulletManager.h"
 #include <cmath>

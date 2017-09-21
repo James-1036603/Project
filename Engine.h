@@ -3,6 +3,7 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
 #include"Player.h"
+#include"Enemy.h"
 #include "BulletManager.h"
 
 class FileNotFound {};
@@ -21,6 +22,7 @@ class Engine
         sf::Music _gameMusic;
 
         Player _player;//Instance for player
+        Enemy _enemy;//Instance of enemy (1 for now)
         BulletManager _bulletManager;
 
 
