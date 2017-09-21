@@ -17,7 +17,7 @@ Bullet::Bullet(const sf::Vector2f& startingPos, const float& rotation): _bulletM
     _rotation = rotation;
     _bulletSprite=_default.getSprite();
     _bulletPos = startingPos;
-    _bulletSprite.setRotation(rotation);
+    _bulletSprite.setRotation((rotation*180/3.14)+90);
 
     //_displaySize = displaySize;
 }
