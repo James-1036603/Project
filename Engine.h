@@ -18,6 +18,7 @@ class Engine
         sf::RenderWindow _window;//Regular Window
         sf::Sprite _backgroundSprite;//Sprite for background
         sf::Texture _backgroundTexture;//Background texture
+        sf::Music _gameMusic;
 
         Player _player;//Instance for player
         BulletManager _bulletManager;
