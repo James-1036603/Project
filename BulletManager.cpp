@@ -17,9 +17,3 @@ std::vector<Bullet> BulletManager::deleteInactiveBullets(std::vector<Bullet>* bu
     return tempBulletVec;
 }
 
-//void BulletManager::deleteBullet(std::vector<Bullet>* bulletVector, const iterator& elem)
-//{
-//    auto iter = bulletVector->begin() + elem;
-//    *iter = std::move(bulletVector->back());
-//    bulletVector->pop_back();
-//}

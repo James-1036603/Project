@@ -1,9 +1,9 @@
 #include "Engine.h"
 
 Engine::Engine():_bulletManager(),
+
     _window(sf::VideoMode(1920,1080),"Game", sf::Style::Default),
-    _player(static_cast<sf::Vector2f>(_window.getSize()), 400, &_bulletManager),
-    _enemy(static_cast<sf::Vector2f>(_window.getSize()), &_bulletManager)
+    _player(static_cast<sf::Vector2f>(_window.getSize()), 400, &_bulletManager)
 {
     Engine::drawSplashScreen();
     if(!_backgroundTexture.loadFromFile("Images/background.jpg")) throw FileNotFound();//Load background texture)
@@ -13,6 +13,9 @@ Engine::Engine():_bulletManager(),
     _gameMusic.play();//Play
     _gameMusic.setLoop(true);//Loop the music
 
+
+    //Spawn the enemies
+    _theEnemies.spawnEnemies();
 }
 
 Engine::~Engine()
@@ -56,3 +59,4 @@ void Engine::drawSplashScreen()
 
 
 }
+

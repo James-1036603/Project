@@ -10,7 +10,7 @@ void Engine::draw()
     _player.drawBullets(_window);
 
     //Draw the enemy
-    _window.draw(_enemy.getSprite());
+    _theEnemies.drawEnemies(&_window);
 
     _window.display();
 }
