@@ -12,13 +12,18 @@ EnemyManager::~EnemyManager()
 
 void EnemyManager::spawnEnemies()//First spawn one enemy, then 10 later, then use a level seed
 {
-    sf::Vector2f displaySize(1920,1080);
-    Enemy aNewEnemy(displaySize, &_enemyBulletManager, &_enemyMover);
-    _curEnemies.push_back(aNewEnemy);
+    for(auto i = 0; i != 10; i++)
+    {
+        sf::Vector2f displaySize(1920,1080);
+        Enemy aNewEnemy(displaySize, &_enemyBulletManager, &_enemyMover);
+        _curEnemies.push_back(aNewEnemy);
+    }
+
 }
 
 void EnemyManager::updateEnemies(const float& elapsedTime)
 {
+
     for(auto i = 0u; i != _curEnemies.size(); i++) _curEnemies[i].update(elapsedTime); //Update all the enemies in the vector
 }
 

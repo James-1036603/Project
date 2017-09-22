@@ -43,15 +43,21 @@ sf::Sprite Enemy::getSprite() const
 void Enemy::update(const float& elapsedTime)
 {
 
-    _moveEnemy->MoveEnemy(_curPosition,_speed,elapsedTime);
+    _moveEnemy->MoveEnemy(_curPosition,_speed,elapsedTime, _rotation);
 //    _curPosition.x -= _speed * elapsedTime;
-    if(_curPosition.x >= _displaySize.x || _curPosition.x <= 0) _curPosition.x = 960;
+    if(_curPosition.x >= _displaySize.x || _curPosition.x <= 0 ||
+    _curPosition.y >= _displaySize.y || _curPosition.y <= 0)
+    {
+        _curPosition.x = 960;//Reset if out of bounds x
+        _curPosition.y = 540;//Reset if out of bounds y
+    }
     _objSprite.setPosition(_curPosition);
 }
 
 void Enemy::generateRotation()
 {
-    srand(time(NULL));
+
     float random = rand()%100;
     _rotation = 2 * PI * (random/100);
+    std::cout<<"Generated: "<<_rotation<<"\n";
 }
