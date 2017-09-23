@@ -1,5 +1,5 @@
 #include "Bullet.h"
-Bullet Bullet::_default{};
+Bullet Bullet::_default {};
 
 Bullet::Bullet():_bulletMovement(sf::Vector2f(0,0))
 {
@@ -27,19 +27,23 @@ Bullet::~Bullet()
     //dtor
 }
 
-bool Bullet::bulletIsAlive() {return _isAlive;};
-
-void Bullet::update(const float& elapsedTime)
+bool Bullet::bulletIsAlive()
 {
-    //_bulletPos.x += _speed * elapsedTime;
-    _bulletMovement.Move(&_bulletPos, elapsedTime, _isAlive);
+    return _isAlive;
+};
+
+void Bullet::updatePlayerBullet(const float& elapsedTime)
+{
+    _bulletMovement.MovePlayerBullet(&_bulletPos, elapsedTime, _isAlive);//Move the player bullet
     _bulletSprite.setPosition(_bulletPos);
-
-
-    std::cout<<"Updated X: "<<_bulletPos.x<<"\n";
-    std::cout<<"Updated Y: "<<_bulletPos.y<<"\n";
 }
 
+void Bullet::updateEnemyBullet(const float& elapsedTime)
+{
+    _bulletMovement.MoveEnemyBullet(&_bulletPos, elapsedTime, _isAlive, _rotation, _speed);//Move the enemy bullet
+    _bulletSprite.setPosition(_bulletPos);
+
+}
 sf::Sprite Bullet::getSprite()
 {
     return _bulletSprite;

@@ -35,21 +35,26 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="GameTests.cpp">
+			<Option compile="0" />
+			<Option link="0" />
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/BulletManager.h" />
 		<Unit filename="include/BulletMovement.h" />
+		<Unit filename="include/Enemy.h" />
+		<Unit filename="include/EnemyManager.h" />
+		<Unit filename="include/EnemyMovement.h" />
 		<Unit filename="include/Engine.h" />
 		<Unit filename="include/Player.h" />
-		<Unit filename="main.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
+		<Unit filename="main.cpp" />
 		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/BulletManager.cpp" />
 		<Unit filename="src/BulletMovement.cpp" />
 		<Unit filename="src/Draw.cpp" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/EnemyManager.cpp" />
+		<Unit filename="src/EnemyMovement.cpp" />
 		<Unit filename="src/Engine.cpp" />
 		<Unit filename="src/Include.cpp" />
 		<Unit filename="src/Player.cpp" />

@@ -15,7 +15,8 @@ class Bullet
         virtual ~Bullet();
         sf::Sprite getSprite();
 
-        void update(const float& elapsedTime);
+        void updatePlayerBullet(const float& elapsedTime);//Player Bullet update
+        void updateEnemyBullet(const float& elapsedTime);//Enemy bullet update (different movement to the player)
         bool bulletIsAlive();
 
         sf::Vector2f getBulletPos() const {return _bulletPos;}//ONLY USED FOR TESTING

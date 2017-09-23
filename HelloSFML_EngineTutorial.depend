@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1505472270 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/main.cpp
+1506094824 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Engine.h"
@@ -14,33 +14,34 @@
 	<cmath>
 	<iostream>
 
-1505725861 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Draw.cpp
+1506117592 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Draw.cpp
 	"Engine.h"
 
-1505739483 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Engine.cpp
+1506103714 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Engine.cpp
 	"Engine.h"
 
-1505662121 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Include.cpp
+1506103712 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Include.cpp
 	"Engine.h"
 
-1505560524 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Update.cpp
+1506103714 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Update.cpp
 	"Engine.h"
 
-1505739398 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Engine.h
+1506103738 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Engine.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Player.h"
+	"EnemyManager.h"
 	"BulletManager.h"
 
-1505741811 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Bullet.cpp
+1506117084 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Bullet.cpp
 	"Bullet.h"
 
-1505741308 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Bullet.h
+1506115444 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Bullet.h
 	"BulletMovement.h"
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1505741547 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/GameTests.cpp
+1505742416 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/GameTests.cpp
 	<vector>
 	<doctest.h>
 	<SFML/Graphics.hpp>
@@ -48,8 +49,9 @@
 	"Player.h"
 	"Bullet.h"
 	"BulletManager.h"
+	"BulletMovement.h"
 
-1505739249 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Player.h
+1506117178 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Player.h
 	<vector>
 	<SFML/Graphics.hpp>
 	"Bullet.h"
@@ -57,19 +59,60 @@
 	<cmath>
 	<iostream>
 
-1505740483 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Player.cpp
+1506117244 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Player.cpp
 	"Player.h"
 
-1505742106 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/BulletMovement.h
+1506116456 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/BulletMovement.h
 	<SFML/Graphics.hpp>
+	<cmath>
 
-1505734770 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/BulletMovement.cpp
+1506117100 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/BulletMovement.cpp
 	"BulletMovement.h"
 
-1505740424 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/BulletManager.h
+1506103738 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/BulletManager.h
 	"Bullet.h"
 	<vector>
 
-1505740424 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/BulletManager.cpp
+1506103714 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/BulletManager.cpp
 	"BulletManager.h"
+
+1506158253 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/Enemy.cpp
+	"Enemy.h"
+
+1506117186 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/Enemy.h
+	<vector>
+	<SFML/Graphics.hpp>
+	"EnemyMovement.h"
+	"Bullet.h"
+	"BulletManager.h"
+	<iostream>
+
+1506103712 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/EnemyMovement.cpp
+	"EnemyMovement.h"
+
+1506103736 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/EnemyMovement.h
+	<cstdlib>
+	<SFML/Graphics.hpp>
+	<cmath>
+
+1506117600 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/EnemyManager.h
+	<vector>
+	<SFML/Graphics.hpp>
+	"Enemy.h"
+	"EnemyMovement.h"
+	"BulletManager.h"
+
+1506158220 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/EnemyManager.cpp
+	"EnemyManager.h"
+
+1506103712 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/FixedBullet.cpp
+	"FixedBullet.h"
+
+1506103736 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/FixedBullet.h
+
+1506103712 source:/home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/src/ShotBullets.cpp
+	"ShotBullets.h"
+
+1506103736 /home/drdoom/Desktop/CodeBlocks_Projects/HelloSFML_EngineTutorial/include/ShotBullets.h
+	"Bullet.h"
 

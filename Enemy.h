@@ -22,7 +22,7 @@ class Enemy
 
     void update(const float& elapsedTime);//Called once per frame
     std::vector<Bullet> getEnemyBullets() const;
-    void drawBullets(sf::RenderWindow& currentWindow);
+    void drawBullets(sf::RenderWindow* currentWindow);
 
     sf::Vector2f getEnemyPos() const {return _curPosition;}//ONLY FOR TESTS
     float getSpeed() const {return _speed;}//ONLY FOR TESTS
@@ -34,10 +34,13 @@ private:
     sf::Texture _objTexture;//Texture for the object . Static because it is slow to load the texture each time from file!!
     float _speed;//Speed of pixels per second
     float _rotation;
+    int _stepsTaken;//The idea is, a bullet will be shot every 5 steps taken
     void generateRotation();
+
 
     std::vector<Bullet> _enemyBullets;
     void updateBullets(const float& elapsedTime);
+    void checkBounds();//Check if the enemy has moved out of bounds
 
     static Enemy _default;//Static enemy as default to prevent unwanted load times per init
     BulletManager* _BulletManager;

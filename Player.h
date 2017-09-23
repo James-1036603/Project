@@ -28,7 +28,7 @@ public:
 
     void update(const float& elapsedTime);//Called once per frame
     std::vector<Bullet> getPlayerBullets() const;
-    void drawBullets(sf::RenderWindow& currentWindow);
+    void drawBullets(sf::RenderWindow* currentWindow);
 
     sf::Vector2f getPlayerPos() const {return _curPosition;}//ONLY FOR TESTS
     float getSpeed() const {return _speed;}//ONLY FOR TESTS

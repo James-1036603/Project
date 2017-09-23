@@ -26,7 +26,7 @@ float BulletMovement::yIntercept()
     return CENTER_Y - (_gradient * CENTER_X);
 }
 
-void BulletMovement::Move(sf::Vector2f* curPos, const float& elapsedTime, bool& bulletSatus)
+void BulletMovement::MovePlayerBullet(sf::Vector2f* curPos, const float& elapsedTime, bool& bulletSatus)
 {
     auto newX = 0.0f;
     if(curPos->x>CENTER_X) newX = curPos->x - 0.01*(curPos->x);
@@ -42,4 +42,10 @@ void BulletMovement::Move(sf::Vector2f* curPos, const float& elapsedTime, bool& 
 
     curPos->x = newX;
     curPos->y = newY;
+}
+void BulletMovement::MoveEnemyBullet(sf::Vector2f* curPos, const float& elapsedTime, bool& bulletSatus, const float& rotation, const float& speed)
+{
+    curPos->x += -(speed*elapsedTime) * std::cos(rotation);
+    curPos->y += -(speed*elapsedTime) * std::sin(rotation);
+    if(curPos->x>1920 || curPos->x<0 || curPos->y > 1080 || curPos->y <0) bulletSatus = 0; //If the bullet has gone off the screen, set inactive
 }

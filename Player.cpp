@@ -66,19 +66,20 @@ void Player::update(const float& elapsedTime)
 
 
     Player::updateBullets(elapsedTime);//Update the bullets
-    _playerBullets =  _playerBulletManager.deleteInactiveBullets(&_playerBullets);//Delete inactive Bullets
+
 
 }
 
 void Player::updateBullets(const float& elapsedTime)
 {
     //Update the bullets position
-    for(unsigned int i = 0; i != _playerBullets.size(); i++)
+    for(auto i = 0u; i != _playerBullets.size(); i++)
     {
-        if(_playerBullets[i].bulletIsAlive()){
-        _playerBullets.at(i).update(elapsedTime);
-        }
+
+        _playerBullets.at(i).updatePlayerBullet(elapsedTime);
+
     }
+    _playerBullets =  _playerBulletManager.deleteInactiveBullets(&_playerBullets);//Delete inactive Bullets
 }
 
 std::vector<Bullet> Player::getPlayerBullets() const {return _playerBullets;}
@@ -102,8 +103,8 @@ void Player::moveCounterClockwise(const float& elapsedTime)
 }
 
 
-void Player::drawBullets(sf::RenderWindow& currentWindow)
+void Player::drawBullets(sf::RenderWindow* currentWindow)
 {
     for(auto currentBullet : _playerBullets)
-        if(currentBullet.bulletIsAlive())currentWindow.draw(currentBullet.getSprite());
+        if(currentBullet.bulletIsAlive())currentWindow->draw(currentBullet.getSprite());//Draw the bullet to the screen, but only if it is active
 }
