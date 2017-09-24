@@ -20,6 +20,7 @@ class PlayerManager
         void drawPlayerBullets(sf::RenderWindow* currentWindow);
         bool playerIsAlive() const;
         void movePlayer(MoveDirection dirToMove);//Move the player
+        Player theCurrentPlayer() const;//Return the active player. needed for collision checking in enemy
 
     private:
     Player _curPlayer;

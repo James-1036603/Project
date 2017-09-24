@@ -19,6 +19,8 @@ class Enemy
     sf::Sprite getSprite() const;//Get a copy of the current sprite
 
     void Shoot();
+    void getShot();
+    bool isAlive() const;//Check if the enemy is alive
 
     void update(const float& elapsedTime);//Called once per frame
     std::vector<Bullet> getEnemyBullets() const;

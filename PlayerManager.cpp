@@ -64,3 +64,8 @@ void PlayerManager::checkEnemyBulletsToPlayer(const std::vector<Enemy>& curEnemi
     }
     //Note, the bullets are not being set inactive yet, thus causing more damage than once to the player. This is likely due to the fact that the returned vectors are CONSTANT, thus no changes to the bullet can be made
 }
+
+Player PlayerManager::theCurrentPlayer() const
+{
+    return _curPlayer;
+}

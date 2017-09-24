@@ -77,7 +77,7 @@ void Enemy::checkBounds()
 void Enemy::Shoot()
 {
     int steps = _stepsTaken;
-    if(steps == 20)//Shoot a bullet after every X amount of steps
+    if(steps == 25)//Shoot a bullet after every X amount of steps
     {
         Bullet newBullet(_curPosition, _rotation);
         _enemyBullets.push_back(newBullet);
@@ -105,4 +105,14 @@ void Enemy::drawBullets(sf::RenderWindow* currentWindow)
 std::vector<Bullet> Enemy::getEnemyBullets() const
 {
     return _enemyBullets;
+}
+
+void Enemy::getShot()
+{
+    _isAlive = false;
+}
+
+bool Enemy::isAlive() const
+{
+    return _isAlive;
 }
