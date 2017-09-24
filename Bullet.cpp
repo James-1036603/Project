@@ -48,3 +48,8 @@ sf::Sprite Bullet::getSprite()
 {
     return _bulletSprite;
 }
+
+void Bullet::setInActive()
+{
+    _isAlive = false;
+}

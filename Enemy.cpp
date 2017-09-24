@@ -54,6 +54,7 @@ void Enemy::update(const float& elapsedTime)
     //Update Bullets
     Enemy::updateBullets(elapsedTime);
 
+
 }
 
 void Enemy::generateRotation()
@@ -76,7 +77,7 @@ void Enemy::checkBounds()
 void Enemy::Shoot()
 {
     int steps = _stepsTaken;
-    if(steps == 100)//Shoot a bullet after every X amount of steps
+    if(steps == 20)//Shoot a bullet after every X amount of steps
     {
         Bullet newBullet(_curPosition, _rotation);
         _enemyBullets.push_back(newBullet);
@@ -99,4 +100,9 @@ void Enemy::drawBullets(sf::RenderWindow* currentWindow)
 {
     for(auto currentBullet : _enemyBullets)  if(currentBullet.bulletIsAlive())  currentWindow->draw(currentBullet.getSprite());
 
+}
+
+std::vector<Bullet> Enemy::getEnemyBullets() const
+{
+    return _enemyBullets;
 }

@@ -1,9 +1,9 @@
 #include "Engine.h"
 
-Engine::Engine():_bulletManager(),
-
+Engine::Engine():
     _window(sf::VideoMode(1920,1080),"Game", sf::Style::Default),
-    _player(static_cast<sf::Vector2f>(_window.getSize()), 400, &_bulletManager)
+    _thePlayer(static_cast<sf::Vector2f>(_window.getSize()), 400, &_bulletManager),
+    _bulletManager()
 {
     Engine::drawSplashScreen();
     if(!_backgroundTexture.loadFromFile("Images/background.jpg")) throw FileNotFound();//Load background texture)
@@ -13,7 +13,8 @@ Engine::Engine():_bulletManager(),
     _gameMusic.play();//Play
     _gameMusic.setLoop(true);//Loop the music
 
-
+    _window.setMouseCursorVisible(false);
+    _window.setFramerateLimit(60);
     //Spawn the enemies
     _theEnemies.spawnEnemies();
 }
@@ -35,6 +36,7 @@ void Engine::start()
         input();
         update(dtAsSeconds);
         draw();
+        endGame();//Game will end once the player loses 3 lives
     }
 }
 

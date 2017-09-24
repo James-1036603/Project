@@ -16,6 +16,8 @@ class EnemyManager
         void updateEnemies(const float& elapsedTime);
         void drawEnemies(sf::RenderWindow* _curWindow);//Draw enemies to the current window
         void drawEnemyBullets(sf::RenderWindow* _curWindow);//Draw the enemy bullets to the window
+
+        std::vector<Enemy> theEnemies() const;
     private:
         std::vector<Enemy> _curEnemies;//The current enemies on display
         EnemyMovement _enemyMover;

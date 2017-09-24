@@ -2,7 +2,7 @@
 #define ENGINE_H
 #include<SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
-#include"Player.h"
+#include "PlayerManager.h"
 #include"EnemyManager.h"
 #include "BulletManager.h"
 
@@ -21,7 +21,7 @@ class Engine
         sf::Texture _backgroundTexture;//Background texture
         sf::Music _gameMusic;
 
-        Player _player;//Instance for player
+        PlayerManager _thePlayer;//Instance for player
         EnemyManager _theEnemies;//Instance of all enemies
         BulletManager _bulletManager;
 
@@ -33,7 +33,7 @@ class Engine
         void input();
         void update(float& dtAsSeconds);
         void draw();
-        void drawBullets();
+        void endGame();
 };
 
 #endif // ENGINE_H

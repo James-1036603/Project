@@ -4,6 +4,7 @@ Player::Player(const sf::Vector2f& displaySize, const float& radius, BulletManag
 {
     //ctor
     _speed = 200;//How fast should the character move
+    _playerLives = 3;//Player starts with 3 lives. Can be changed if needed
     if(!_objTexture.loadFromFile("Images/PlayerCharacterSmall.png")) throw player_FileNotFound();//load texture
     _objSprite.setTexture(_objTexture);//set object texture
 
@@ -80,6 +81,17 @@ void Player::updateBullets(const float& elapsedTime)
 
     }
     _playerBullets =  _playerBulletManager.deleteInactiveBullets(&_playerBullets);//Delete inactive Bullets
+}
+
+void Player::getShot()//The player was shot
+{
+    _playerLives--;
+}
+
+bool Player::isAlive() const//Check player lives and evaluate if is alive or not
+{
+    if(_playerLives == 0) return false;
+    else return true;
 }
 
 std::vector<Bullet> Player::getPlayerBullets() const {return _playerBullets;}

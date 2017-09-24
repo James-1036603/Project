@@ -18,6 +18,7 @@ class Bullet
         void updatePlayerBullet(const float& elapsedTime);//Player Bullet update
         void updateEnemyBullet(const float& elapsedTime);//Enemy bullet update (different movement to the player)
         bool bulletIsAlive();
+        void setInActive();//Disable the bullet
 
         sf::Vector2f getBulletPos() const {return _bulletPos;}//ONLY USED FOR TESTING
         float getSpeed() const {return _speed;}//ONLY FOR TESTING
